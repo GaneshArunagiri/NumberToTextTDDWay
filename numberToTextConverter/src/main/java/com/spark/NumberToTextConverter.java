@@ -11,26 +11,27 @@ public class NumberToTextConverter {
 			" seventy", " eighty", " ninety" };
 	private static final int NUMBER_TEN = 10;
 	private static final int NUMBER_TWENTY = 20;
-	
+
 	public String convertNumbertToText(int inputNumber) {
 		String result = "";
 		if (inputNumber < NUMBER_TWENTY) {
 			result = numberNames[inputNumber];
-		} else if(inputNumber < NUMBER_HUNDRED)
-		{
-			int tenthDigit = inputNumber / NUMBER_TEN;
-			int numberDigit = inputNumber % NUMBER_TEN;
-			result = tensNames[tenthDigit] + numberNames[numberDigit];
-		}
-		else
-		{
-			int hundredthDigit=inputNumber/NUMBER_HUNDRED;
-			inputNumber=inputNumber%NUMBER_HUNDRED;
-			int tenthDigit = inputNumber / NUMBER_TEN;
-			int numberDigit = inputNumber % NUMBER_TEN;
-			result=numberNames[hundredthDigit]+TEXT_HUNDRED +tensNames[tenthDigit] + numberNames[numberDigit];;
+		} else if (inputNumber < NUMBER_HUNDRED) {
+			result = convertLessThanHundred(inputNumber);
+		} else {
+			int hundredthDigit = inputNumber / NUMBER_HUNDRED;
+			inputNumber = inputNumber % NUMBER_HUNDRED;
+			result = numberNames[hundredthDigit] + TEXT_HUNDRED + convertLessThanHundred(inputNumber);
 		}
 		return result.trim();
+	}
+
+	public String convertLessThanHundred(int inputNumber) {
+		String result;
+		int tenthDigit = inputNumber / NUMBER_TEN;
+		int numberDigit = inputNumber % NUMBER_TEN;
+		result = tensNames[tenthDigit] + numberNames[numberDigit];
+		return result;
 	}
 
 }
