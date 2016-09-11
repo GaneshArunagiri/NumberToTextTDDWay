@@ -17,5 +17,11 @@ public class NumberToTextConverterTest {
 		NumberToTextConverter converter=new NumberToTextConverter();
 		assertEquals("two",converter.convertNumbertToText(2));
 	}
+	
+	@Test
+	public void testNumberThreeToText() {
+		NumberToTextConverter converter=new NumberToTextConverter();
+		assertEquals("three",converter.convertNumbertToText(3));
+	}
 
 }
