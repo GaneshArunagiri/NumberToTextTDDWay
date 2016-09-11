@@ -31,16 +31,16 @@ public class NumberToTextConverter {
 
 	public String convertFourDigitNumber(int inputNumber) {
 		String result;
-		int thousandthDigit = getQuotient(inputNumber,NUMBER_THOUSAND);
-		inputNumber = inputNumber % NUMBER_THOUSAND;
+		int thousandthDigit = getQuotient(inputNumber, NUMBER_THOUSAND);
+		inputNumber = getRemainder(inputNumber, NUMBER_THOUSAND);
 		result = numberNames[thousandthDigit] + TEXT_THOUSAND + convertLessThanThousand(inputNumber);
 		return result;
 	}
 
 	public String convertLessThanThousand(int inputNumber) {
 		String result;
-		int hundredthDigit = getQuotient(inputNumber,NUMBER_HUNDRED);
-		inputNumber = inputNumber % NUMBER_HUNDRED;
+		int hundredthDigit = getQuotient(inputNumber, NUMBER_HUNDRED);
+		inputNumber = getRemainder(inputNumber, NUMBER_HUNDRED);
 		result = numberNames[hundredthDigit];
 		if (hundredthDigit > NUMBER_ZERO) {
 			result = result + TEXT_HUNDRED;
@@ -48,15 +48,19 @@ public class NumberToTextConverter {
 		result = result + convertLessThanHundred(inputNumber);
 		return result;
 	}
-	
 
 	public String convertLessThanHundred(int inputNumber) {
 		String result;
 		int tenthDigit = getQuotient(inputNumber, NUMBER_TEN);
-		int numberDigit = inputNumber % NUMBER_TEN;
+		int numberDigit = getRemainder(inputNumber, NUMBER_TEN);
 		result = tensNames[tenthDigit] + numberNames[numberDigit];
 		return result;
 	}
+
+	public int getRemainder(int inputNumber, int divider) {
+		return inputNumber % divider;
+	}
+
 	public int getQuotient(int inputNumber, int divider) {
 		return inputNumber / divider;
 	}
