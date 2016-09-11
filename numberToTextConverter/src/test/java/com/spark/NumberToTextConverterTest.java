@@ -65,6 +65,10 @@ public class NumberToTextConverterTest {
 		assertEquals("one thousand", converter.convertNumbertToText(1000));
 	}
 	
+	@Test
+	public void testNumberThousandOneToText() {
+		assertEquals("one thousand one", converter.convertNumbertToText(1001));
+	}
 	@After
 	public void cleanUp() {
 		converter = null;
