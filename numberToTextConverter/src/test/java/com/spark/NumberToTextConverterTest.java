@@ -35,6 +35,10 @@ public class NumberToTextConverterTest {
 		assertEquals("twenty", converter.convertNumbertToText(20));
 	}
 
+	@Test
+	public void testNumberTwentyOneToText() {
+		assertEquals("twenty one", converter.convertNumbertToText(21));
+	}
 	@After
 	public void cleanUp() {
 		converter = null;
