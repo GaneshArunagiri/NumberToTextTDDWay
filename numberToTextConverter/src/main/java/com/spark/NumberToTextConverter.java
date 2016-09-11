@@ -20,17 +20,27 @@ public class NumberToTextConverter {
 			result = numberNames[inputNumber];
 		} else if (inputNumber < NUMBER_HUNDRED) {
 			result = convertLessThanHundred(inputNumber);
-		} else if(inputNumber<NUMBER_THOUSAND){
-			int hundredthDigit = inputNumber / NUMBER_HUNDRED;
-			inputNumber = inputNumber % NUMBER_HUNDRED;
-			result = numberNames[hundredthDigit] + TEXT_HUNDRED + convertLessThanHundred(inputNumber);
-		}
-		else
-		{
-			int thousandthDigit=inputNumber/NUMBER_THOUSAND;
-			result=numberNames[thousandthDigit]+TEXT_THOUSAND;
+		} else if (inputNumber < NUMBER_THOUSAND) {
+			result = convertLessThanThousand(inputNumber);
+		} else {
+			int thousandthDigit = inputNumber / NUMBER_THOUSAND;
+			inputNumber = inputNumber % NUMBER_THOUSAND;
+			result = numberNames[thousandthDigit] + TEXT_THOUSAND + convertLessThanThousand(inputNumber);
+
 		}
 		return result.trim();
+	}
+
+	public String convertLessThanThousand(int inputNumber) {
+		String result;
+		int hundredthDigit = inputNumber / NUMBER_HUNDRED;
+		inputNumber = inputNumber % NUMBER_HUNDRED;
+		result = numberNames[hundredthDigit];
+		if (hundredthDigit > 0) {
+			result = result + TEXT_HUNDRED;
+		}
+		result = result + convertLessThanHundred(inputNumber);
+		return result;
 	}
 
 	public String convertLessThanHundred(int inputNumber) {
