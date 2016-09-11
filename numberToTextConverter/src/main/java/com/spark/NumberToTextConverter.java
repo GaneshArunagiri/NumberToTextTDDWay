@@ -5,7 +5,7 @@ public class NumberToTextConverter {
 	private static final String[] numberNames = { "", " one", " two", " three", " four", " five", " six", " seven",
 			" eight", " nine", " ten", " eleven", " twelve", " thirteen", " fourteen", " fifteen", " sixteen",
 			" seventeen", " eighteen", " nineteen" };
-	private static final String[] tensNames = { "", " ten", " twenty" };
+	private static final String[] tensNames = { "", " ten", " twenty"," thirty" };
 	private static final int NUMBER_TEN = 10;
 	private static final int NUMBER_TWENTY = 20;
 	
