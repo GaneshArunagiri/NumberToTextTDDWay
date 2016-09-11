@@ -7,8 +7,9 @@ import org.junit.Test;
 public class NumberToTextConverterTest {
 
 	@Test
-	public void test() {
-		assertTrue(true);
+	public void testNumberOneToText() {
+		NumberToTextConverter converter=new NumberToTextConverter();
+		assertEquals("one",converter.convertNumbertToText(1));
 	}
 
 }
