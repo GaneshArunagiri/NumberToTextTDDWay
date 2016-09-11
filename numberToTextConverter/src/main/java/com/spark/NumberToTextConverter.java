@@ -2,13 +2,10 @@ package com.spark;
 
 public class NumberToTextConverter {
 
+	private static final String[] numberNames={"","one","two","three"};
 	public String convertNumbertToText(int inputNumber) {
 		String result = "";
-		if (inputNumber == 1) {
-			result = "one";
-		} else {
-			result = "two";
-		}
+		result=numberNames[inputNumber];
 		return result;
 	}
 
