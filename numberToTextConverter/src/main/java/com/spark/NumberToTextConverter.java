@@ -18,10 +18,14 @@ public class NumberToTextConverter {
 			result = numberNames[inputNumber];
 		} else if (inputNumber < NUMBER_HUNDRED) {
 			result = convertLessThanHundred(inputNumber);
-		} else {
+		} else if(inputNumber<1000){
 			int hundredthDigit = inputNumber / NUMBER_HUNDRED;
 			inputNumber = inputNumber % NUMBER_HUNDRED;
 			result = numberNames[hundredthDigit] + TEXT_HUNDRED + convertLessThanHundred(inputNumber);
+		}
+		else
+		{
+			result="one thousand";
 		}
 		return result.trim();
 	}
