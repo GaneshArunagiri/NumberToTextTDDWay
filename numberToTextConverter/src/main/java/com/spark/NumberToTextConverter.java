@@ -2,7 +2,7 @@ package com.spark;
 
 public class NumberToTextConverter {
 
-	private static final String TEXT_HUNDRED = "hundred";
+	private static final String TEXT_HUNDRED = " hundred";
 	private static final int NUMBER_HUNDRED = 100;
 	private static final String[] numberNames = { "", " one", " two", " three", " four", " five", " six", " seven",
 			" eight", " nine", " ten", " eleven", " twelve", " thirteen", " fourteen", " fifteen", " sixteen",
@@ -24,7 +24,11 @@ public class NumberToTextConverter {
 		}
 		else
 		{
-			result=TEXT_HUNDRED;
+			int hundredthDigit=inputNumber/NUMBER_HUNDRED;
+			inputNumber=inputNumber%NUMBER_HUNDRED;
+			int tenthDigit = inputNumber / NUMBER_TEN;
+			int numberDigit = inputNumber % NUMBER_TEN;
+			result=numberNames[hundredthDigit]+TEXT_HUNDRED +tensNames[tenthDigit] + numberNames[numberDigit];;
 		}
 		return result.trim();
 	}
