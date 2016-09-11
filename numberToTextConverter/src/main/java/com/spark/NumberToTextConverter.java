@@ -2,6 +2,7 @@ package com.spark;
 
 public class NumberToTextConverter {
 
+	private static final int NUMBER_ZERO = 0;
 	private static final String TEXT_THOUSAND = " thousand";
 	private static final int NUMBER_THOUSAND = 1000;
 	private static final String TEXT_HUNDRED = " hundred";
@@ -30,7 +31,7 @@ public class NumberToTextConverter {
 
 	public String convertFourDigitNumber(int inputNumber) {
 		String result;
-		int thousandthDigit = inputNumber / NUMBER_THOUSAND;
+		int thousandthDigit = getQuotient(inputNumber,NUMBER_THOUSAND);
 		inputNumber = inputNumber % NUMBER_THOUSAND;
 		result = numberNames[thousandthDigit] + TEXT_THOUSAND + convertLessThanThousand(inputNumber);
 		return result;
@@ -38,22 +39,26 @@ public class NumberToTextConverter {
 
 	public String convertLessThanThousand(int inputNumber) {
 		String result;
-		int hundredthDigit = inputNumber / NUMBER_HUNDRED;
+		int hundredthDigit = getQuotient(inputNumber,NUMBER_HUNDRED);
 		inputNumber = inputNumber % NUMBER_HUNDRED;
 		result = numberNames[hundredthDigit];
-		if (hundredthDigit > 0) {
+		if (hundredthDigit > NUMBER_ZERO) {
 			result = result + TEXT_HUNDRED;
 		}
 		result = result + convertLessThanHundred(inputNumber);
 		return result;
 	}
+	
 
 	public String convertLessThanHundred(int inputNumber) {
 		String result;
-		int tenthDigit = inputNumber / NUMBER_TEN;
+		int tenthDigit = getQuotient(inputNumber, NUMBER_TEN);
 		int numberDigit = inputNumber % NUMBER_TEN;
 		result = tensNames[tenthDigit] + numberNames[numberDigit];
 		return result;
+	}
+	public int getQuotient(int inputNumber, int divider) {
+		return inputNumber / divider;
 	}
 
 }
