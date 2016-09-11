@@ -11,5 +11,11 @@ public class NumberToTextConverterTest {
 		NumberToTextConverter converter=new NumberToTextConverter();
 		assertEquals("one",converter.convertNumbertToText(1));
 	}
+	
+	@Test
+	public void testNumberTwoToText() {
+		NumberToTextConverter converter=new NumberToTextConverter();
+		assertEquals("two",converter.convertNumbertToText(2));
+	}
 
 }
