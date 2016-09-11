@@ -3,14 +3,13 @@ package com.spark;
 public class NumberToTextConverter {
 
 	public String convertNumbertToText(int inputNumber) {
-		if(inputNumber==1)
-		{
-			return "one";
+		String result = "";
+		if (inputNumber == 1) {
+			result = "one";
+		} else {
+			result = "two";
 		}
-		else
-		{
-			return "two";
-		}
+		return result;
 	}
 
 }
