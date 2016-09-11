@@ -23,12 +23,17 @@ public class NumberToTextConverter {
 		} else if (inputNumber < NUMBER_THOUSAND) {
 			result = convertLessThanThousand(inputNumber);
 		} else {
-			int thousandthDigit = inputNumber / NUMBER_THOUSAND;
-			inputNumber = inputNumber % NUMBER_THOUSAND;
-			result = numberNames[thousandthDigit] + TEXT_THOUSAND + convertLessThanThousand(inputNumber);
-
+			result = convertFourDigitNumber(inputNumber);
 		}
 		return result.trim();
+	}
+
+	public String convertFourDigitNumber(int inputNumber) {
+		String result;
+		int thousandthDigit = inputNumber / NUMBER_THOUSAND;
+		inputNumber = inputNumber % NUMBER_THOUSAND;
+		result = numberNames[thousandthDigit] + TEXT_THOUSAND + convertLessThanThousand(inputNumber);
+		return result;
 	}
 
 	public String convertLessThanThousand(int inputNumber) {
