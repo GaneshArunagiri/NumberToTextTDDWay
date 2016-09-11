@@ -2,6 +2,8 @@ package com.spark;
 
 public class NumberToTextConverter {
 
+	private static final String TEXT_HUNDRED = "hundred";
+	private static final int NUMBER_HUNDRED = 100;
 	private static final String[] numberNames = { "", " one", " two", " three", " four", " five", " six", " seven",
 			" eight", " nine", " ten", " eleven", " twelve", " thirteen", " fourteen", " fifteen", " sixteen",
 			" seventeen", " eighteen", " nineteen" };
@@ -14,7 +16,7 @@ public class NumberToTextConverter {
 		String result = "";
 		if (inputNumber < NUMBER_TWENTY) {
 			result = numberNames[inputNumber];
-		} else if(inputNumber < 100)
+		} else if(inputNumber < NUMBER_HUNDRED)
 		{
 			int tenthDigit = inputNumber / NUMBER_TEN;
 			int numberDigit = inputNumber % NUMBER_TEN;
@@ -22,7 +24,7 @@ public class NumberToTextConverter {
 		}
 		else
 		{
-			result="hundred";
+			result=TEXT_HUNDRED;
 		}
 		return result.trim();
 	}
