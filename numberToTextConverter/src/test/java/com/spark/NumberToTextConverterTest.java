@@ -69,6 +69,12 @@ public class NumberToTextConverterTest {
 	public void testNumberThousandOneToText() {
 		assertEquals("one thousand one", converter.convertNumbertToText(1001));
 	}
+	
+	@Test
+	public void testFourDigitNumberToText() {
+		assertEquals("two thousand five hundred twenty three", converter.convertNumbertToText(2523));
+	}
+	
 	@After
 	public void cleanUp() {
 		converter = null;
