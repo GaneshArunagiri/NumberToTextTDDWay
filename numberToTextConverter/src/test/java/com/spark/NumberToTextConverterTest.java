@@ -55,6 +55,11 @@ public class NumberToTextConverterTest {
 		assertEquals("one hundred one", converter.convertNumbertToText(101));
 	}
 	
+	@Test
+	public void testNumberNineNinetyNineToText() {
+		assertEquals("nine hundred ninety nine", converter.convertNumbertToText(999));
+	}
+	
 	@After
 	public void cleanUp() {
 		converter = null;
