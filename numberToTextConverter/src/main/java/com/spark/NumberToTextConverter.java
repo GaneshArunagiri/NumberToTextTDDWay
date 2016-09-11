@@ -14,10 +14,15 @@ public class NumberToTextConverter {
 		String result = "";
 		if (inputNumber < NUMBER_TWENTY) {
 			result = numberNames[inputNumber];
-		} else {
+		} else if(inputNumber < 100)
+		{
 			int tenthDigit = inputNumber / NUMBER_TEN;
 			int numberDigit = inputNumber % NUMBER_TEN;
 			result = tensNames[tenthDigit] + numberNames[numberDigit];
+		}
+		else
+		{
+			result="hundred";
 		}
 		return result.trim();
 	}
