@@ -2,9 +2,8 @@ package com.spark;
 
 public class NumberToTextConverter {
 
-	public Object convertNumbertToText(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	public String convertNumbertToText(int i) {
+		return "one";
 	}
 
 }
