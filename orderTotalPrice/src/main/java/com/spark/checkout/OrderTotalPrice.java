@@ -26,9 +26,13 @@ public class OrderTotalPrice {
 				} else {
 					totalPrice += (quantity / 3) * 130 + (quantity % 3) * 50;
 				}
-			} else if (product.equals("B"))
-				totalPrice += 30 * quantity;
-			else if (product.equals("C"))
+			} else if (product.equals("B")) {
+				if (quantity < 2) {
+					totalPrice += 30 * quantity;
+				} else {
+					totalPrice += (quantity / 2) * 45 + (quantity % 2) * 30;
+				}
+			} else if (product.equals("C"))
 				totalPrice += 20 * quantity;
 			else if (product.equals("D"))
 				totalPrice += 15 * quantity;
