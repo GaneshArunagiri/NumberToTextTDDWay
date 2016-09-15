@@ -8,6 +8,10 @@ public class OrderTotalPrice {
 			totalPrice= 50;
 		else if(products.equals("B"))
 			totalPrice=30;
+		else if(products.equals("C"))
+			totalPrice=20;
+		else if(products.equals("D"))
+			totalPrice=15;
 		return totalPrice;
 	}
 

@@ -32,23 +32,21 @@ public class OrderTotalPriceTest {
 
 		assertEquals(30, ordTotal.calculatePrice("B"));
 	}
+
 	@Test
 	public void testSingleItemC() {
-		OrderTotalPrice ordTotal=new OrderTotalPrice();
+
 		assertEquals(20, ordTotal.calculatePrice("C"));
 	}
+
 	@Test
 	public void testSingleItemD() {
-		OrderTotalPrice ordTotal=new OrderTotalPrice();
+
 		assertEquals(15, ordTotal.calculatePrice("D"));
 	}
-	
-	
-	
-	
+
 	@After
-	public void cleanup()
-	{
-		ordTotal=null;
+	public void cleanup() {
+		ordTotal = null;
 	}
 }
