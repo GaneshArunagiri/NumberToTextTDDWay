@@ -69,6 +69,21 @@ public class OrderTotalPriceTest {
 	{
 	assertEquals(190,ordTotal.calculatePrice("AAABBD"));
 	}
+	
+	@Test
+	public void testCombinations() {
+	    assertEquals(100,ordTotal.calculatePrice("AA"));
+	    assertEquals(130,ordTotal.calculatePrice("AAA"));
+	    assertEquals(180,ordTotal.calculatePrice("AAAA"));
+	    assertEquals(230,ordTotal.calculatePrice("AAAAA"));
+	    assertEquals(260,ordTotal.calculatePrice("AAAAAA"));
+
+	    assertEquals(160,ordTotal.calculatePrice("AAAB"));
+	    assertEquals(175,ordTotal.calculatePrice("AAABB"));
+	    assertEquals(190,ordTotal.calculatePrice("AAABBD"));
+	    assertEquals(190,ordTotal.calculatePrice("DABABA"));
+
+	}
 	@After
 	public void cleanup() {
 		ordTotal = null;

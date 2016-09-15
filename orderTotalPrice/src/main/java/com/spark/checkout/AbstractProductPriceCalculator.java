@@ -6,7 +6,6 @@ public abstract class AbstractProductPriceCalculator implements ProductPriceCalc
 
 	@Override
 	public int calculatePrice(Map<String, Integer> productmap) {
-		System.out.println("abstract price");
 		int totalPrice=calculateProductPrice(productmap);
 		totalPrice+=remainingCalculation(productmap);
 		return totalPrice;

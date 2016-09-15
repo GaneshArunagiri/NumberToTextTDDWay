@@ -15,30 +15,7 @@ public class OrderTotalPrice {
 		int totalPrice = 0;
 
 		Map<String, Integer> productMap = getProductMap(products);
-		CALCULATOR.calculatePrice(productMap);//just for testing the flow. no implementation
-
-		String product;
-		int quantity = 0;
-		for (Map.Entry<String, Integer> entry : productMap.entrySet()) {
-			product = entry.getKey();
-			quantity = entry.getValue();
-			if (product.equals("A")) {
-				if (quantity < 3) {
-					totalPrice += 50 * quantity;
-				} else {
-					totalPrice += (quantity / 3) * 130 + (quantity % 3) * 50;
-				}
-			} else if (product.equals("B")) {
-				if (quantity < 2) {
-					totalPrice += 30 * quantity;
-				} else {
-					totalPrice += (quantity / 2) * 45 + (quantity % 2) * 30;
-				}
-			} else if (product.equals("C"))
-				totalPrice += 20 * quantity;
-			else if (product.equals("D"))
-				totalPrice += 15 * quantity;
-		}
+		totalPrice = CALCULATOR.calculatePrice(productMap);
 		return totalPrice;
 	}
 
