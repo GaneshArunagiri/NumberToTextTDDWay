@@ -17,4 +17,10 @@ public class OrderTotalPriceTest {
 		OrderTotalPrice ordTotal=new OrderTotalPrice();
 		assertEquals(50, ordTotal.calculatePrice("A"));
 	}
+	
+	@Test
+	public void testSingleItemB() {
+		OrderTotalPrice ordTotal=new OrderTotalPrice();
+		assertEquals(30, ordTotal.calculatePrice("B"));
+	}
 }
