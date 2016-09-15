@@ -11,24 +11,27 @@ import java.util.Set;
 public class OrderTotalPrice {
 
 	public int calculatePrice(String products) {
-		int totalPrice=0;
-		
+		int totalPrice = 0;
+
 		Map<String, Integer> productMap = getProductMap(products);
-		
+
 		String product;
-		int quantity=0;
-		for (Map.Entry<String, Integer> entry : productMap.entrySet())
-		{
-			product=entry.getKey();
-			quantity=entry.getValue();
-			if(product.equals("A"))		
-				totalPrice+=50*	quantity;
-			else if(product.equals("B"))		
-				totalPrice+=30*quantity;	
-			else if(product.equals("C"))		
-				totalPrice+=20*quantity;	
-			else if(product.equals("D"))		
-				totalPrice+=15*quantity;	
+		int quantity = 0;
+		for (Map.Entry<String, Integer> entry : productMap.entrySet()) {
+			product = entry.getKey();
+			quantity = entry.getValue();
+			if (product.equals("A")) {
+				if (quantity < 3) {
+					totalPrice += 50 * quantity;
+				} else {
+					totalPrice += (quantity / 3) * 130 + (quantity % 3) * 50;
+				}
+			} else if (product.equals("B"))
+				totalPrice += 30 * quantity;
+			else if (product.equals("C"))
+				totalPrice += 20 * quantity;
+			else if (product.equals("D"))
+				totalPrice += 15 * quantity;
 		}
 		return totalPrice;
 	}
@@ -47,4 +50,3 @@ public class OrderTotalPrice {
 		return productMap;
 	}
 }
-
