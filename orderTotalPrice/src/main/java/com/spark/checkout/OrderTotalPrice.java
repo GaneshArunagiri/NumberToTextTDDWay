@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import static com.spark.checkout.OrderCalculaterInstance.CALCULATOR;
 
 public class OrderTotalPrice {
 
@@ -14,6 +15,7 @@ public class OrderTotalPrice {
 		int totalPrice = 0;
 
 		Map<String, Integer> productMap = getProductMap(products);
+		CALCULATOR.calculatePrice(productMap);//just for testing the flow. no implementation
 
 		String product;
 		int quantity = 0;
