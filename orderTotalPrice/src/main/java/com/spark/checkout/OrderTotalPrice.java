@@ -3,11 +3,12 @@ package com.spark.checkout;
 public class OrderTotalPrice {
 
 	public int calculatePrice(String products) {
+		int totalPrice=0;
 		if(products.equals("A"))
 		{
-			return 50;
+			totalPrice= 50;
 		}
-		return 0;
+		return totalPrice;
 	}
 
 }
