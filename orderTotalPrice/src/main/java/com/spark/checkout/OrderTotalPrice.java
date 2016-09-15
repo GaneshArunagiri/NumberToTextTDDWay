@@ -13,7 +13,6 @@ public class OrderTotalPrice {
 
 	public int calculatePrice(String products) {
 		int totalPrice = 0;
-
 		Map<String, Integer> productMap = getProductMap(products);
 		totalPrice = CALCULATOR.calculatePrice(productMap);
 		return totalPrice;

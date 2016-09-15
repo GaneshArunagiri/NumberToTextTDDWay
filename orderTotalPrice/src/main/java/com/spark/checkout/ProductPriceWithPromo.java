@@ -3,17 +3,17 @@ package com.spark.checkout;
 import java.util.Map;
 
 public class ProductPriceWithPromo extends AbstractProductPriceCalculator {
-	public static final ProductPriceCalculator NEXT_CALCULATOR=new ProductPriceWithoutPromo();
+	public static final ProductPriceCalculator NEXT_CALCULATOR = new ProductPriceWithoutPromo();
 
 	@Override
 	protected int calculateProductPrice(Map<String, Integer> productmap) {
 
 		String product;
 		int qty;
-		int totalPrice=0;
+		int totalPrice = 0;
 		for (Map.Entry<String, Integer> entry : productmap.entrySet()) {
 			product = entry.getKey();
-			qty=entry.getValue();
+			qty = entry.getValue();
 			if (product.equals("A")) {
 				if (qty < 3) {
 					totalPrice += 50 * qty;
@@ -36,6 +36,5 @@ public class ProductPriceWithPromo extends AbstractProductPriceCalculator {
 	protected ProductPriceCalculator nextCalculator() {
 		return NEXT_CALCULATOR;
 	}
-	
 
 }

@@ -49,41 +49,42 @@ public class OrderTotalPriceTest {
 	public void testTwoItemsOfA() {
 		assertEquals(100, ordTotal.calculatePrice("AA"));
 	}
-	
+
 	@Test
 	public void testSingleItemABCD() {
 		assertEquals(115, ordTotal.calculatePrice("ABCD"));
 	}
+
 	@Test
-	public void testDiscountOfA()
-	{
+	public void testDiscountOfA() {
 		assertEquals(130, ordTotal.calculatePrice("AAA"));
 	}
+
 	@Test
-	public void testDiscountOfB()
-	{
+	public void testDiscountOfB() {
 		assertEquals(45, ordTotal.calculatePrice("BB"));
 	}
+
 	@Test
-	public void testDiscountOfAB()
-	{
-	assertEquals(190,ordTotal.calculatePrice("AAABBD"));
+	public void testDiscountOfAB() {
+		assertEquals(190, ordTotal.calculatePrice("AAABBD"));
 	}
-	
+
 	@Test
 	public void testCombinations() {
-	    assertEquals(100,ordTotal.calculatePrice("AA"));
-	    assertEquals(130,ordTotal.calculatePrice("AAA"));
-	    assertEquals(180,ordTotal.calculatePrice("AAAA"));
-	    assertEquals(230,ordTotal.calculatePrice("AAAAA"));
-	    assertEquals(260,ordTotal.calculatePrice("AAAAAA"));
+		assertEquals(100, ordTotal.calculatePrice("AA"));
+		assertEquals(130, ordTotal.calculatePrice("AAA"));
+		assertEquals(180, ordTotal.calculatePrice("AAAA"));
+		assertEquals(230, ordTotal.calculatePrice("AAAAA"));
+		assertEquals(260, ordTotal.calculatePrice("AAAAAA"));
 
-	    assertEquals(160,ordTotal.calculatePrice("AAAB"));
-	    assertEquals(175,ordTotal.calculatePrice("AAABB"));
-	    assertEquals(190,ordTotal.calculatePrice("AAABBD"));
-	    assertEquals(190,ordTotal.calculatePrice("DABABA"));
+		assertEquals(160, ordTotal.calculatePrice("AAAB"));
+		assertEquals(175, ordTotal.calculatePrice("AAABB"));
+		assertEquals(190, ordTotal.calculatePrice("AAABBD"));
+		assertEquals(190, ordTotal.calculatePrice("DABABA"));
 
 	}
+
 	@After
 	public void cleanup() {
 		ordTotal = null;

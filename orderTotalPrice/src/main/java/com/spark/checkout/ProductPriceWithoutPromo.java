@@ -8,11 +8,11 @@ public class ProductPriceWithoutPromo extends AbstractProductPriceCalculator {
 	protected int calculateProductPrice(Map<String, Integer> productMap) {
 		String product;
 		int qty;
-		int totalPrice=0;
-		
+		int totalPrice = 0;
+
 		for (Map.Entry<String, Integer> entry : productMap.entrySet()) {
 			product = entry.getKey();
-			qty=entry.getValue();
+			qty = entry.getValue();
 			if (product.equals("C"))
 				totalPrice += 20 * qty;
 			else if (product.equals("D"))
