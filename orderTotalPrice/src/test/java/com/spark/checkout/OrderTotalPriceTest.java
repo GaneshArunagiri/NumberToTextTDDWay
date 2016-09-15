@@ -7,8 +7,9 @@ import org.junit.Test;
 public class OrderTotalPriceTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testEmptyOrder() {
+		OrderTotalPrice ordTotal=new OrderTotalPrice();
+		assertEquals(0, ordTotal.calculatePrice(""));
 	}
 
 }
