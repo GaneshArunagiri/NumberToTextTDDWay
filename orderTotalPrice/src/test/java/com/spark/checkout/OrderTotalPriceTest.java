@@ -54,6 +54,11 @@ public class OrderTotalPriceTest {
 	public void testSingleItemABCD() {
 		assertEquals(115, ordTotal.calculatePrice("ABCD"));
 	}
+	@Test
+	public void testDiscountOfA()
+	{
+		assertEquals(130, ordTotal.calculatePrice("AAA"));
+	}
 	@After
 	public void cleanup() {
 		ordTotal = null;
