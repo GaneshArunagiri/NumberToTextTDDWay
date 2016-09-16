@@ -2,9 +2,9 @@ package com.spark.game;
 
 public class RockPaperScissorsGame {
 
-	public String whoWins(String string, String string2) {
+	public String whoWins(String gestureOfPlayerOne, String gestureOfPlayerTwo) {
 		String winner="";
-		if(string.equals("rock")) winner="rock";
+		if(gestureOfPlayerOne.equals("rock")) winner="rock";
 		else winner="scissors";
 		return winner;
 	}
