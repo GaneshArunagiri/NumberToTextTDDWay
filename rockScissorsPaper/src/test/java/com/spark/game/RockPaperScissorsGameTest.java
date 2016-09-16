@@ -10,27 +10,27 @@ public class RockPaperScissorsGameTest {
 
 	private RockPaperScissorsGame game;
 
-	@After
+	@Before
 	public void setup() {
 		game = new RockPaperScissorsGame();
 	}
 
 	@Test
 	public void rockBeatsScissors() {
-		assertEquals("rock", game.whoWins("rock", "scissors"));
+		assertEquals("ROCK", game.whoWins("ROCK", "SCISSORS"));
 	}
 
 	@Test
 	public void scissorsBeatsPaper() {
-		assertEquals("scissors", game.whoWins("scissors", "paper"));
+		assertEquals("SCISSORS", game.whoWins("SCISSORS", "PAPER"));
 	}
 
 	@Test
 	public void paperBeatsRock() {
-		assertEquals("paper", game.whoWins("paper", "rock"));
+		assertEquals("PAPER", game.whoWins("PAPER", "ROCK"));
 	}
 
-	@Before
+	@After
 	public void cleanup() {
 		game = null;
 	}
