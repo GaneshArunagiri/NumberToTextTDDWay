@@ -6,7 +6,11 @@ public class RockPaperScissorsGame {
 		Choices playerOneChoice = Choices.createChoice(gestureOfPlayerOne);
 		Choices playerTwoChoice = Choices.createChoice(gestureOfPlayerTwo);
 		Choices winner;
-
+		if(playerOneChoice.equals(playerTwoChoice))
+		{
+			return Choices.DRAW.toString();
+		}
+		
 		if (playerOneChoice.equals(Choices.ROCK))
 			winner = (playerTwoChoice==Choices.SCISSORS?Choices.ROCK:Choices.PAPER);
 		else if (playerOneChoice.equals(Choices.SCISSORS))
