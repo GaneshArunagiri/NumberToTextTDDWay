@@ -41,6 +41,11 @@ public class RockPaperScissorsGameTest {
 	public void paperLostWithScissors() {
 		assertEquals("SCISSORS",game.whoWins("PAPER","SCISSORS"));
 	}
+	@Test
+	public void paperDrawsPaper() {
+		RockPaperScissorsGame game=new RockPaperScissorsGame();
+		assertEquals("PAPER",game.whoWins("PAPER","PAPER"));
+	}
 	@After
 	public void cleanup() {
 		game = null;
