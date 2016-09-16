@@ -31,13 +31,15 @@ public class RockPaperScissorsGameTest {
 	}
 	@Test
 	public void rockLostWithPaper() {
-		RockPaperScissorsGame game=new RockPaperScissorsGame();
 		assertEquals("PAPER",game.whoWins("ROCK","PAPER"));
 	}
 	@Test
 	public void scissorLostWithRock() {
-		RockPaperScissorsGame game=new RockPaperScissorsGame();
 		assertEquals("ROCK",game.whoWins("SCISSORS","ROCK"));
+	}
+	@Test
+	public void paperLostWithScissors() {
+		assertEquals("SCISSORS",game.whoWins("PAPER","SCISSORS"));
 	}
 	@After
 	public void cleanup() {
