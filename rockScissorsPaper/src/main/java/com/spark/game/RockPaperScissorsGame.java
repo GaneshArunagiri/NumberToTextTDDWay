@@ -8,7 +8,7 @@ public class RockPaperScissorsGame {
 		Choices winner;
 
 		if (playerOneChoice.equals(Choices.ROCK))
-			winner = Choices.ROCK;
+			winner = (playerTwoChoice==Choices.SCISSORS?Choices.ROCK:Choices.PAPER);
 		else if (playerOneChoice.equals(Choices.SCISSORS))
 			winner = Choices.SCISSORS;
 		else
