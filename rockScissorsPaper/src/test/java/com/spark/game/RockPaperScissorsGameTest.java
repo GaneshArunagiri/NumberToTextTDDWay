@@ -2,23 +2,36 @@ package com.spark.game;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class RockPaperScissorsGameTest {
 
+	private RockPaperScissorsGame game;
+
+	@After
+	public void setup() {
+		game = new RockPaperScissorsGame();
+	}
+
 	@Test
 	public void rockBeatsScissors() {
-		RockPaperScissorsGame game = new RockPaperScissorsGame();
 		assertEquals("rock", game.whoWins("rock", "scissors"));
 	}
+
 	@Test
 	public void scissorsBeatsPaper() {
-		RockPaperScissorsGame game=new RockPaperScissorsGame();
-		assertEquals("scissors",game.whoWins("scissors","paper"));
+		assertEquals("scissors", game.whoWins("scissors", "paper"));
 	}
+
 	@Test
 	public void paperBeatsRock() {
-		RockPaperScissorsGame game=new RockPaperScissorsGame();
-		assertEquals("paper",game.whoWins("paper","rock"));
+		assertEquals("paper", game.whoWins("paper", "rock"));
+	}
+
+	@Before
+	public void cleanup() {
+		game = null;
 	}
 }
