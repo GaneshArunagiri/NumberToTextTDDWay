@@ -29,7 +29,11 @@ public class RockPaperScissorsGameTest {
 	public void paperBeatsRock() {
 		assertEquals("PAPER", game.whoWins("PAPER", "ROCK"));
 	}
-
+	@Test
+	public void rockLostWithPaper() {
+		RockPaperScissorsGame game=new RockPaperScissorsGame();
+		assertEquals("PAPER",game.whoWins("ROCK","PAPER"));
+	}
 	@After
 	public void cleanup() {
 		game = null;
