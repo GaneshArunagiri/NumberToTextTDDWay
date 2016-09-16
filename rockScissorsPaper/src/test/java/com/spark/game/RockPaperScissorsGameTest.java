@@ -7,8 +7,9 @@ import org.junit.Test;
 public class RockPaperScissorsGameTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void rockBeatsScissors() {
+		RockPaperScissorsGame game = new RockPaperScissorsGame();
+		assertEquals("rock", game.whoWins("rock", "scissors"));
 	}
 
 }
