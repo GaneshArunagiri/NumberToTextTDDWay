@@ -43,7 +43,6 @@ public class RockPaperScissorsGameTest {
 	}
 	@Test
 	public void paperDrawsPaper() {
-		RockPaperScissorsGame game=new RockPaperScissorsGame();
 		assertEquals("DRAW",game.whoWins("PAPER","PAPER"));
 	}
 	@After
