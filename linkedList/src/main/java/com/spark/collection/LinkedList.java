@@ -1,5 +1,8 @@
 package com.spark.collection;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LinkedList {
 	Node head;
 
@@ -53,5 +56,11 @@ public class LinkedList {
 		}
 
 	}
+
+	public List<String> values() {
+		return new ArrayList();
+	}
+
+	
 
 }

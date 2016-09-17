@@ -2,6 +2,9 @@ package com.spark.collection;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -85,6 +88,16 @@ public class LinkedListTest {
 		assertFalse(list.contains("PAPER"));
 		assertTrue(list.contains("SCISSORS"));
 
+	}
+	
+	@Test
+	public void testDisplayAllValues()
+	{
+		list.add("ROCK");
+		list.add("PAPER");
+		list.add("SCISSORS");
+		List<String> expectedResult=Arrays.asList("ROCK","PAPER","SCISSORS");
+		assertEquals(expectedResult,list.values());
 	}
 
 	@After
