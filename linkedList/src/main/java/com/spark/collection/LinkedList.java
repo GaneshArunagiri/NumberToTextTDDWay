@@ -1,9 +1,9 @@
 package com.spark.collection;
 
 public class LinkedList {
-
+	Node head;
 	public boolean isEmpty() {
-		return true;
+		return (head==null);
 	}
 
 }
