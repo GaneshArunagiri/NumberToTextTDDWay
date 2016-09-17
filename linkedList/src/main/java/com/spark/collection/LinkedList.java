@@ -54,7 +54,7 @@ public class LinkedList {
 				current = current.nextLink;
 			}
 		}
-
+ 
 	}
 
 	public List<String> values() {
