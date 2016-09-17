@@ -37,6 +37,10 @@ public class LinkedList {
 
 	public void delete(String inputValue) {
 		
+		if(isNodeNotNull(head))
+		{
+			head=null;			
+		}
 	}
 
 }
