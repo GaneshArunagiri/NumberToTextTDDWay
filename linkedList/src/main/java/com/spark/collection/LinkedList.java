@@ -9,13 +9,21 @@ public class LinkedList {
 
 	public void add(String value) {
 		Node newNode = new Node(value);
-		head = newNode;
+		if (head==null)
+			head = newNode;
+		else
+			head.nextLink=newNode;
 
 	}
 
 	public boolean contains(String inputValue) {
-
-		return head.value == inputValue;
+		Node current=head;
+		while(current!=null)
+		{
+			if(current.value==inputValue) return true;
+			current=current.nextLink;
+		}
+		return false;
 	}
 
 }
