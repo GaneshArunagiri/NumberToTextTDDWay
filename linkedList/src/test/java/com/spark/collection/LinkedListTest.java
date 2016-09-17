@@ -29,7 +29,7 @@ public class LinkedListTest {
 	}
 
 	@Test
-	public void testAddItemToList() {
+	public void testAddAnItemToList() {
 		/*
 		 * Ideally there will be two test cases here. Will do it later. 1- test
 		 * only void add() - using Mockito doNothing() and verify(atleast 1
@@ -89,15 +89,14 @@ public class LinkedListTest {
 		assertTrue(list.contains("SCISSORS"));
 
 	}
-	
+
 	@Test
-	public void testDisplayAllValues()
-	{
+	public void testDisplayAllValues() {
 		list.add("ROCK");
 		list.add("PAPER");
 		list.add("SCISSORS");
-		List<String> expectedResult=Arrays.asList("ROCK","PAPER","SCISSORS");
-		assertEquals(expectedResult,list.values());
+		List<String> expectedResult = Arrays.asList("ROCK", "PAPER", "SCISSORS");
+		assertEquals(expectedResult, list.values());
 	}
 
 	@After

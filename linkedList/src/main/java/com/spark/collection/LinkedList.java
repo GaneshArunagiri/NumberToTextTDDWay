@@ -54,13 +54,17 @@ public class LinkedList {
 				current = current.nextLink;
 			}
 		}
- 
+
 	}
 
 	public List<String> values() {
-		return new ArrayList();
+		Node current = head;
+		List<String> result = new ArrayList<String>();
+		while (current != null) {
+			result.add(current.value);
+			current = current.nextLink;
+		}
+		return result;
 	}
-
-	
 
 }
