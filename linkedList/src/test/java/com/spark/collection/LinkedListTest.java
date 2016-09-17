@@ -69,6 +69,23 @@ public class LinkedListTest {
 		assertTrue(!list.contains("ROCK"));
 		
 	}
+	
+	@Test
+	public void testDeleteSecondItemFromList() {
+		
+		list.add("ROCK");
+		list.add("PAPER");
+		list.add("SCISSORS");
+		assertTrue(list.contains("ROCK"));
+		assertTrue(list.contains("PAPER"));
+		assertTrue(list.contains("SCISSORS"));
+	
+		list.delete("PAPER");
+		assertTrue(list.contains("ROCK"));
+		assertTrue(!list.contains("PAPER"));
+		assertTrue(list.contains("SCISSORS"));
+		
+	}
 
 	@After
 	public void cleanup() {
