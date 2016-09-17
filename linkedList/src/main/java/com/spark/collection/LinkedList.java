@@ -36,11 +36,22 @@ public class LinkedList {
 	}
 
 	public void delete(String inputValue) {
-		
-		if(isNodeNotNull(head))
-		{
-			head=null;			
+
+		if (head.value == inputValue) {
+			head = head.nextLink;
+			return;
 		}
+		if (isNodeNotNull(head)) {
+			Node current = head;
+			while (isNodeNotNull(current.nextLink)) {
+				if (current.nextLink.value == inputValue) {
+					current.nextLink = current.nextLink.nextLink;
+					return;
+				}
+				current = current.nextLink;
+			}
+		}
+
 	}
 
 }
