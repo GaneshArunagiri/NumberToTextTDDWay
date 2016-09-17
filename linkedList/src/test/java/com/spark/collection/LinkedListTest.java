@@ -2,9 +2,18 @@ package com.spark.collection;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class LinkedListTest {
+
+	private LinkedList list;
+
+	@Before
+	public void setup() {
+		list = new LinkedList();
+	}
 
 	@Test
 	public void testCreateLinkedListInstance() {
@@ -13,7 +22,6 @@ public class LinkedListTest {
 
 	@Test
 	public void testCreateEmptyList() {
-		LinkedList list = new LinkedList();
 		assertTrue(list.isEmpty());
 	}
 
@@ -24,7 +32,6 @@ public class LinkedListTest {
 		 * only void add() - using Mockito doNothing() and verify(atleast 1
 		 * time) methods. 2 -contains as a separate test case
 		 */
-		LinkedList list = new LinkedList();
 		list.add("ROCK");
 		assertTrue(list.contains("ROCK"));
 
@@ -33,7 +40,6 @@ public class LinkedListTest {
 	@Test
 	public void testAddTwoItemsToList() {
 		// Same comment as above. Will use Mokito for add.
-		LinkedList list = new LinkedList();
 		list.add("ROCK");
 		list.add("PAPER");
 		assertTrue(list.contains("ROCK"));
@@ -44,7 +50,7 @@ public class LinkedListTest {
 	@Test
 	public void testAddThreeItemsToList() {
 		// Same comment as above. Will use Mokito for add.
-		LinkedList list = new LinkedList();
+
 		list.add("ROCK");
 		list.add("PAPER");
 		list.add("SCISSORS");
@@ -52,5 +58,10 @@ public class LinkedListTest {
 		assertTrue(list.contains("PAPER"));
 		assertTrue(list.contains("SCISSORS"));
 
+	}
+
+	@After
+	public void cleanup() {
+		list = null;
 	}
 }

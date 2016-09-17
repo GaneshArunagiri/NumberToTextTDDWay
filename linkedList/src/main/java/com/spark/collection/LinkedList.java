@@ -13,7 +13,7 @@ public class LinkedList {
 			head = newNode;
 		else {
 			Node current = head;
-			while (current.nextLink != null) {
+			while (isNodeNotNull(current.nextLink)) {
 				current = current.nextLink;
 			}
 			current.nextLink = newNode;
@@ -21,9 +21,13 @@ public class LinkedList {
 		}
 	}
 
+	public boolean isNodeNotNull(Node node) {
+		return node != null;
+	}
+
 	public boolean contains(String inputValue) {
 		Node current = head;
-		while (current != null) {
+		while (isNodeNotNull(current)) {
 			if (current.value == inputValue)
 				return true;
 			current = current.nextLink;
