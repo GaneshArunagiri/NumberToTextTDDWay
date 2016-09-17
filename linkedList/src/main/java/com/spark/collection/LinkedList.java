@@ -9,19 +9,24 @@ public class LinkedList {
 
 	public void add(String value) {
 		Node newNode = new Node(value);
-		if (head==null)
+		if (head == null)
 			head = newNode;
-		else
-			head.nextLink=newNode;
+		else {
+			Node current = head;
+			while (current.nextLink != null) {
+				current = current.nextLink;
+			}
+			current.nextLink = newNode;
 
+		}
 	}
 
 	public boolean contains(String inputValue) {
-		Node current=head;
-		while(current!=null)
-		{
-			if(current.value==inputValue) return true;
-			current=current.nextLink;
+		Node current = head;
+		while (current != null) {
+			if (current.value == inputValue)
+				return true;
+			current = current.nextLink;
 		}
 		return false;
 	}
