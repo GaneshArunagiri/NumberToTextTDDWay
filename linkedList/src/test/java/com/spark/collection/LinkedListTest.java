@@ -10,5 +10,9 @@ public class LinkedListTest {
 	public void testCreateLinkedListInstance() {
 		assertTrue(new LinkedList() instanceof LinkedList);
 	}
-
+	@Test
+	public void testCreateEmptyList() {
+		LinkedList list=new LinkedList();
+		assertTrue(list.isEmpty());
+	}
 }
