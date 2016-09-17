@@ -7,12 +7,15 @@ public class LinkedList {
 		return (head == null);
 	}
 
-	public void add(String string) {
+	public void add(String value) {
+		Node newNode = new Node(value);
+		head = newNode;
 
 	}
 
-	public boolean contains(String string) {
-		return false;
+	public boolean contains(String inputValue) {
+
+		return head.value == inputValue;
 	}
 
 }
