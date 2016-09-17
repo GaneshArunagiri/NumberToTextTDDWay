@@ -28,4 +28,16 @@ public class LinkedListTest {
 		assertTrue(list.contains("ROCK"));
 
 	}
+	
+	@Test
+	public void testAddTwoItemsToList()
+	{
+		//Same comment as above. Will use Mokito for add.
+		LinkedList list = new LinkedList();
+		list.add("ROCK");
+		list.add("PAPER");
+		assertTrue(list.contains("ROCK"));
+		assertTrue(list.contains("PAPER"));
+		
+	}
 }
