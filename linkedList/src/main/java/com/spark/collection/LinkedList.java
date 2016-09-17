@@ -35,4 +35,8 @@ public class LinkedList {
 		return false;
 	}
 
+	public void delete(String inputValue) {
+		
+	}
+
 }

@@ -49,12 +49,27 @@ public class LinkedListTest {
 
 	@Test
 	public void testAddThreeItemsToList() {
-		// Same comment as above. Will use Mokito for add.
 
 		list.add("ROCK");
 		list.add("PAPER");
 		list.add("SCISSORS");
 		assertTrue(list.contains("ROCK"));
+		assertTrue(list.contains("PAPER"));
+		assertTrue(list.contains("SCISSORS"));
+
+	}
+	
+	@Test
+	public void testDeleteAnItemFromList() {
+		
+		list.add("ROCK");
+		list.add("PAPER");
+		list.add("SCISSORS");
+		assertTrue(list.contains("ROCK"));
+		assertTrue(list.contains("PAPER"));
+		assertTrue(list.contains("SCISSORS"));
+		list.delete("ROCK");
+		assertTrue(!list.contains("ROCK"));
 		assertTrue(list.contains("PAPER"));
 		assertTrue(list.contains("SCISSORS"));
 
