@@ -7,12 +7,12 @@ public class LinkedList {
 	Node head;
 
 	public boolean isEmpty() {
-		return (head == null);
+		return (!isNodeNotNull(head));
 	}
 
-	public void add(String value) {
-		Node newNode = new Node(value);
-		if (head == null)
+	public void add(String inputValue) {
+		Node newNode = new Node(inputValue);
+		if (!isNodeNotNull(head))
 			head = newNode;
 		else {
 			Node current = head;
@@ -24,14 +24,10 @@ public class LinkedList {
 		}
 	}
 
-	public boolean isNodeNotNull(Node node) {
-		return node != null;
-	}
-
 	public boolean contains(String inputValue) {
 		Node current = head;
 		while (isNodeNotNull(current)) {
-			if (current.value == inputValue)
+			if (isNodeValueMatches(inputValue, current))
 				return true;
 			current = current.nextLink;
 		}
@@ -40,14 +36,14 @@ public class LinkedList {
 
 	public void delete(String inputValue) {
 
-		if (head.value == inputValue) {
+		if (isNodeValueMatches(inputValue, head)) {
 			head = head.nextLink;
 			return;
 		}
 		if (isNodeNotNull(head)) {
 			Node current = head;
 			while (isNodeNotNull(current.nextLink)) {
-				if (current.nextLink.value == inputValue) {
+				if (isNodeValueMatches(inputValue, current.nextLink)) {
 					current.nextLink = current.nextLink.nextLink;
 					return;
 				}
@@ -60,11 +56,19 @@ public class LinkedList {
 	public List<String> values() {
 		Node current = head;
 		List<String> result = new ArrayList<String>();
-		while (current != null) {
+		while (isNodeNotNull(current)) {
 			result.add(current.value);
 			current = current.nextLink;
 		}
 		return result;
+	}
+
+	private boolean isNodeNotNull(Node node) {
+		return node != null;
+	}
+
+	private boolean isNodeValueMatches(String inputValue, Node current) {
+		return current.value == inputValue;
 	}
 
 }
