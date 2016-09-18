@@ -1,14 +1,22 @@
 package com.spark.collection;
 
 public class Node {
-	String value;
-	Node nextLink;
+	private String value;
+	private Node nextLink;
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
 
 	public Node(String inputValue) {
-		this.value = inputValue;
+		this.setValue(inputValue);
 	}
 
 	public boolean isEmpty() {
-		return (this.value == null);
+		return (this.getValue() == null);
 	}
 }

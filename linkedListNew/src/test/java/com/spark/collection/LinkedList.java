@@ -21,7 +21,11 @@ public class LinkedList {
 	}
 
 	public boolean contains(String inputValue) {
-		return start.value==inputValue;
+		return isNodeValueMatches(inputValue);
+	}
+
+	private boolean isNodeValueMatches(String inputValue) {
+		return start.getValue()==inputValue;
 	}
 
 }
