@@ -45,5 +45,22 @@ public class LinkedListTest {
 		list.delete("SHIVA");
 		assertFalse(list.contains("SHIVA"));
 	}
+	
+	@Test
+	public void testDeleteMultipleItemsFromList()
+	{
+		LinkedList list=new LinkedList();
+		list.add("SHIVA");
+		list.add("VISHNU");
+		list.add("BRAHMA");
+		
+		list.delete("BRAHMA");
+		list.delete("VISHNU");
+		
+		assertTrue(list.contains("SHIVA"));
+		assertFalse(list.contains("VISHNU"));
+		assertFalse(list.contains("BRAHMA"));
+	}
+	
 
 }
