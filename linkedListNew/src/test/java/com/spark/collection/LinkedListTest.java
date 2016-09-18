@@ -18,5 +18,14 @@ public class LinkedListTest {
 		list.add("SHIVA");
 		assertTrue(list.contains("SHIVA"));
 	}
+	@Test
+	public void testAddTwoItemToList(){
+		LinkedList list=new LinkedList();
+		list.add("SHIVA");
+		list.add("VISHNU");
+		assertTrue(list.contains("SHIVA"));
+		assertTrue(list.contains("VISHNU"));
+	}
+	
 
 }
