@@ -26,16 +26,24 @@ public class LinkedList {
 
 	public boolean contains(String inputValue) {
 		Node current = start;
-		while (!current.isEmpty()) {
-			if (isNodeValueMatches(current,inputValue))
+		while (isNodeNotNull(current)) {
+			if (isNodeValueMatches(current, inputValue))
 				return true;
 			current = current.getNextLink();
 		}
 		return false;
 	}
 
+	private boolean isNodeNotNull(Node current) {
+		 return current != null;
+	}
+
 	private boolean isNodeValueMatches(Node currentNode, String inputValue) {
 		return currentNode.getValue() == inputValue;
 	}
-	
+
+	public void delete(String inputValue) {
+		if (isNodeValueMatches(start, inputValue))
+			start = start.getNextLink();
+	}
 }

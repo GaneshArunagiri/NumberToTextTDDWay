@@ -36,5 +36,14 @@ public class LinkedListTest {
 		assertTrue(list.contains("VISHNU"));
 		assertTrue(list.contains("BRAHMA"));
 	}
+	
+	@Test
+	public void testDeleteAnItemFromList()
+	{
+		LinkedList list=new LinkedList();
+		list.add("SHIVA");
+		list.delete("SHIVA");
+		assertFalse(list.contains("SHIVA"));
+	}
 
 }
