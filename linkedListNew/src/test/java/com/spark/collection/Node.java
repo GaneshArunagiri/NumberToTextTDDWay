@@ -12,6 +12,14 @@ public class Node {
 		this.value = value;
 	}
 
+	public Node getNextLink() {
+		return nextLink;
+	}
+
+	public void setNextLink(Node nextLink) {
+		this.nextLink = nextLink;
+	}
+
 	public Node(String inputValue) {
 		this.setValue(inputValue);
 	}
@@ -19,4 +27,5 @@ public class Node {
 	public boolean isEmpty() {
 		return (this.getValue() == null);
 	}
+	
 }

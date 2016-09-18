@@ -14,18 +14,29 @@ public class LinkedList {
 	}
 
 	public void add(String inputValue) {
-		Node newNode=new Node(inputValue);
-		if(start.isEmpty())
-			start=newNode;
+		Node newNode = new Node(inputValue);
+		if (start.isEmpty()) {
+			start = newNode;
+			end = newNode;
+		} else
+			end.setNextLink(newNode);
+		end = newNode;
 
 	}
 
 	public boolean contains(String inputValue) {
-		return isNodeValueMatches(inputValue);
+		Node current = start;
+		while (!current.isEmpty()) {
+			if (current.getValue() == inputValue)
+				return true;
+			current = current.getNextLink();
+		}
+		return false;
 	}
 
 	private boolean isNodeValueMatches(String inputValue) {
-		return start.getValue()==inputValue;
+		return start.getValue() == inputValue;
 	}
 
+	
 }
