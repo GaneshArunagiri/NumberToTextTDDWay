@@ -6,7 +6,7 @@ public class LinkedList {
 	Node end;
 
 	public boolean isEmpty() {
-		return start==null;
+		return start == null;
 	}
 
 	public void add(String inputValue) {
@@ -14,9 +14,10 @@ public class LinkedList {
 		if (this.isEmpty()) {
 			start = newNode;
 			end = newNode;
-		} else
+		} else {
 			end.setNextLink(newNode);
-		end = newNode;
+			end = newNode;
+		}
 
 	}
 
@@ -29,7 +30,6 @@ public class LinkedList {
 		}
 		return false;
 	}
-
 
 	public void delete(String inputValue) {
 		if (isNodeValueMatches(start, inputValue)) {
@@ -51,10 +51,11 @@ public class LinkedList {
 		}
 		return previous;
 	}
+
 	private boolean isNodeNotNull(Node current) {
 		return current != null;
 	}
-	
+
 	private boolean isNodeValueMatches(Node currentNode, String inputValue) {
 		return currentNode.getValue() == inputValue;
 	}
