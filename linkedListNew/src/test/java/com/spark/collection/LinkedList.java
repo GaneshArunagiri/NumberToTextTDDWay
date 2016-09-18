@@ -13,4 +13,12 @@ public class LinkedList {
 		return start.isEmpty();
 	}
 
+	public void add(String string) {
+
+	}
+
+	public boolean contains(String string) {
+		return false;
+	}
+
 }

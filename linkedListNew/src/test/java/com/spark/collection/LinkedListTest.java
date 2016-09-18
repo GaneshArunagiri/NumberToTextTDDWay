@@ -12,5 +12,11 @@ public class LinkedListTest {
 		LinkedList list=new LinkedList();
 		assertTrue(list.isEmpty());
 	}
+	@Test
+	public void testAddSingleItemToList(){
+		LinkedList list=new LinkedList();
+		list.add("SHIVA");
+		assertTrue(list.contains("SHIVA"));
+	}
 
 }
