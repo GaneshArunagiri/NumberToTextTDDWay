@@ -54,9 +54,9 @@ public class LinkedListTest {
 		list.add("VISHNU");
 		list.add("BRAHMA");
 		
-		list.delete("BRAHMA");
 		list.delete("VISHNU");
-		
+		list.delete("BRAHMA");
+				
 		assertTrue(list.contains("SHIVA"));
 		assertFalse(list.contains("VISHNU"));
 		assertFalse(list.contains("BRAHMA"));

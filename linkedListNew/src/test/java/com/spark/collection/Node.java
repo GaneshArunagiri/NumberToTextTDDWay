@@ -24,8 +24,6 @@ public class Node {
 		this.setValue(inputValue);
 	}
 
-	public boolean isEmpty() {
-		return (this.getValue() == null);
-	}
+	
 	
 }

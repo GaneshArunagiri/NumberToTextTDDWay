@@ -5,17 +5,13 @@ public class LinkedList {
 	Node start;
 	Node end;
 
-	public LinkedList() {
-		start = new Node(null);
-	}
-
 	public boolean isEmpty() {
-		return start.isEmpty();
+		return start==null;
 	}
 
 	public void add(String inputValue) {
 		Node newNode = new Node(inputValue);
-		if (start.isEmpty()) {
+		if (this.isEmpty()) {
 			start = newNode;
 			end = newNode;
 		} else
@@ -34,16 +30,33 @@ public class LinkedList {
 		return false;
 	}
 
-	private boolean isNodeNotNull(Node current) {
-		 return current != null;
+
+	public void delete(String inputValue) {
+		if (isNodeValueMatches(start, inputValue)) {
+			start = start.getNextLink();
+			return;
+		}
+		Node previous = findPreviousNode(inputValue);
+		if (isNodeNotNull(previous))
+			previous.setNextLink(previous.getNextLink().getNextLink());
+
 	}
 
+	private Node findPreviousNode(String inputValue) {
+		Node current = start;
+		Node previous = null;
+		while (isNodeNotNull(current) && !isNodeValueMatches(current, inputValue)) {
+			previous = current;
+			current = current.getNextLink();
+		}
+		return previous;
+	}
+	private boolean isNodeNotNull(Node current) {
+		return current != null;
+	}
+	
 	private boolean isNodeValueMatches(Node currentNode, String inputValue) {
 		return currentNode.getValue() == inputValue;
 	}
 
-	public void delete(String inputValue) {
-		if (isNodeValueMatches(start, inputValue))
-			start = start.getNextLink();
-	}
 }
