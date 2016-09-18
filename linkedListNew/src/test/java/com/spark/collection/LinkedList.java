@@ -13,12 +13,15 @@ public class LinkedList {
 		return start.isEmpty();
 	}
 
-	public void add(String string) {
+	public void add(String inputValue) {
+		Node newNode=new Node(inputValue);
+		if(start.isEmpty())
+			start=newNode;
 
 	}
 
-	public boolean contains(String string) {
-		return false;
+	public boolean contains(String inputValue) {
+		return start.value==inputValue;
 	}
 
 }
