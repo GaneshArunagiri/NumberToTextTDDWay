@@ -21,13 +21,13 @@ public class OrderTotalPriceCalculator {
 			product = entry.getKey();
 			qty = entry.getValue();
 			if (product.equals("A"))
-				totalPrice = 50 * qty;
+				totalPrice += 50 * qty;
 			else if (product.equals("B"))
-				totalPrice = 30 * qty;
+				totalPrice += 30 * qty;
 			else if (product.equals("C"))
-				totalPrice = 20 * qty;
+				totalPrice += 20 * qty;
 			else if (product.equals("D"))
-				totalPrice = 15 * qty;
+				totalPrice += 15 * qty;
 		}
 		return totalPrice;
 	}
