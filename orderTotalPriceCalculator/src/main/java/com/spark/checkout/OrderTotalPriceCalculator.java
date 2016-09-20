@@ -6,29 +6,16 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+import static com.spark.checkout.OrderCalculaterInstance.CALCULATOR;
 import com.spark.checkout.vo.Item;
 
 public class OrderTotalPriceCalculator {
 
 	public int calculateOrderTotal(String products) {
 		int totalPrice = 0;
-		List<Item> ItemList = getProductList(products);
+		List<Item> itemList = getProductList(products);
+		totalPrice = CALCULATOR.calculatePrice(itemList);
 
-		String product;
-		int qty = 0;
-		int price = 0;
-		for (Item item : ItemList) {
-			product = item.getName();
-			price = item.getPrice();
-			qty = item.getItemQty();
-			if (item.getPromoQty() > 0) {
-
-				totalPrice += (qty / item.getPromoQty()) * item.getPromoPrice() + (qty % item.getPromoQty()) * price;
-			} else
-				totalPrice += price * qty;
-
-		}
 		return totalPrice;
 	}
 

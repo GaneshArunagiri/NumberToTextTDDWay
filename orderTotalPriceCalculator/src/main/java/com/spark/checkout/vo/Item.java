@@ -4,12 +4,11 @@ import com.spark.enums.ProductPrice;
 import com.spark.enums.PromoRules;
 
 public class Item {
-
-	String name;
-	int price;
+	private String name;
+	private int price;
 	private int itemQty;
-	int promoQty;
-	int promoPrice;
+	private int promoQty;
+	private int promoPrice;
 
 	public Item(String product, int quantity) {
 		this.name = product;
