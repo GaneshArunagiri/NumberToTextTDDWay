@@ -40,7 +40,15 @@ public class OrderTotalPriceCalculatorTest {
 	public void testDiscountOfA() {
 		assertEquals(130, calculator.calculateOrderTotal("AAA"));
 	}
-	
+	@Test
+	public void testDiscountOfB() {
+		assertEquals(45, calculator.calculateOrderTotal("BB"));
+	}
+
+	@Test
+	public void testDiscountOfAB() {
+		assertEquals(190, calculator.calculateOrderTotal("AAABBD"));
+	}
 	@After
 	public void cleanup()
 	{
