@@ -17,17 +17,19 @@ public class OrderTotalPriceCalculator {
 
 		String product;
 		int qty = 0;
+		int price=0;
 		for (Item item:ItemList) {
 			product = item.getName();
+			price=item.getPrice();
 			qty = item.getItemQty();
 			if (product.equals("A"))
-				totalPrice += 50 * qty;
+				totalPrice += price * qty;
 			else if (product.equals("B"))
-				totalPrice += 30 * qty;
+				totalPrice += price * qty;
 			else if (product.equals("C"))
-				totalPrice += 20 * qty;
+				totalPrice += price * qty;
 			else if (product.equals("D"))
-				totalPrice += 15 * qty;
+				totalPrice += price * qty;
 		}
 		return totalPrice;
 	}
