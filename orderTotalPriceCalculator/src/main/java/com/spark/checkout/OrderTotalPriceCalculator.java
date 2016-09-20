@@ -2,8 +2,8 @@ package com.spark.checkout;
 
 public class OrderTotalPriceCalculator {
 
-	public Object calculateOrderTotal(String string) {
-		return null;
+	public int calculateOrderTotal(String string) {
+		return 0;
 	}
 
 }
