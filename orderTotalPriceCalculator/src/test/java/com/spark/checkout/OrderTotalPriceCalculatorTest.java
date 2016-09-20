@@ -31,6 +31,11 @@ public class OrderTotalPriceCalculatorTest {
 	public void testTwoItemsOfA() {
 		assertEquals(100, calculator.calculateOrderTotal("AA"));
 	}
+	
+	@Test
+	public void testSingleItemABCD() {
+		assertEquals(115, calculator.calculateOrderTotal("ABCD"));
+	}
 
 	@After
 	public void cleanup()
