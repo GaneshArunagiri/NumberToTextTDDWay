@@ -6,6 +6,7 @@ public class OrderTotalPriceCalculator {
 		int totalPrice=0;
 		
 		if(products.equals("A")) totalPrice=50;
+		else if(products.equals("B")) totalPrice=30;
 		return totalPrice;
 	}
 
