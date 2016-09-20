@@ -22,8 +22,11 @@ public class OrderTotalPriceCalculator {
 			product = item.getName();
 			price = item.getPrice();
 			qty = item.getItemQty();
+			if (item.getPromoQty() > 0) {
 
-			totalPrice += price * qty;
+				totalPrice += (qty / item.getPromoQty()) * item.getPromoPrice() + (qty % item.getPromoQty()) * price;
+			} else
+				totalPrice += price * qty;
 
 		}
 		return totalPrice;
